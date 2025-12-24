@@ -1,0 +1,6 @@
+{
+    "cmake.sourceDirectory": "/home/rover/orion_ws/src/cpp_pubsub",
+    "files.associations": {
+        "functional": "cpp"
+    }
+}
