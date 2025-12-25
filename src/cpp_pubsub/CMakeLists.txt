@@ -49,6 +49,17 @@ ament_target_dependencies(rough6 geodesy rclcpp geometry_msgs sensor_msgs std_ms
 add_executable(rough7 src/rough7.cpp)
 ament_target_dependencies(rough7 geodesy rclcpp geometry_msgs sensor_msgs std_msgs geographic_msgs)
 
+add_executable(rough8 src/rough8.cpp)
+ament_target_dependencies(rough8 geodesy rclcpp geometry_msgs sensor_msgs std_msgs geographic_msgs)
+
+add_executable(rough9 src/rough9.cpp)
+ament_target_dependencies(rough9 geodesy rclcpp geometry_msgs sensor_msgs std_msgs geographic_msgs)
+
+add_executable(rough10 src/rough10.cpp)
+ament_target_dependencies(rough10 geodesy rclcpp geometry_msgs sensor_msgs std_msgs geographic_msgs)
+
+add_executable(rough11 src/rough11.cpp)
+ament_target_dependencies(rough11 geodesy rclcpp geometry_msgs sensor_msgs std_msgs geographic_msgs)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -73,6 +84,10 @@ install(TARGETS
   rough5
   rough6
   rough7
+  rough8
+  rough9
+  rough10
+  rough11
   DESTINATION lib/${PROJECT_NAME})
 
 ament_package()

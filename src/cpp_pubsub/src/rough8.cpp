@@ -55,14 +55,14 @@ private:
     geographic_msgs::msg::GeoPoint goal_geo_;
     double goal_e_, goal_n_;
     double imu_heading_rad_{0.0};
-    float dist;
+
     float left_min_{10.0};
     float right_min_{10.0};
     float front_min_{10.0};
     bool obstacle_{false};
 
     /* -------- PARAMETERS -------- */
-    const float OBSTACLE_THRESHOLD = 0.1;      // Detection distance
+    const float OBSTACLE_THRESHOLD = 1;      // Detection distance
     const float CRITICAL_DISTANCE = 0.3;       // Emergency stop distance
     const float AVOIDANCE_GAIN = 1.3;          // How aggressively to avoid
     const float GOAL_GAIN = 0.8 + 0.2;               // How much to bias toward goal
@@ -124,7 +124,7 @@ private:
             }
         }
 
-        obstacle_ = (left_min_ < OBSTACLE_THRESHOLD || right_min_ < OBSTACLE_THRESHOLD || front_min_ < OBSTACLE_THRESHOLD && dist>2);
+        obstacle_ = (left_min_ < OBSTACLE_THRESHOLD || right_min_ < OBSTACLE_THRESHOLD || front_min_ < OBSTACLE_THRESHOLD);
     }
 
     void gps_callback(const sensor_msgs::msg::NavSatFix::SharedPtr msg)
@@ -142,7 +142,7 @@ private:
 
         double dx = goal_e_ - curr_utm.easting;
         double dy = goal_n_ - curr_utm.northing;
-        dist = std::hypot(dx, dy);
+        double dist = std::hypot(dx, dy);
 
         /* -------- GOAL HEADING -------- */
         double desired_heading = atan2(dx, dy);
