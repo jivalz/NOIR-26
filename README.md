@@ -115,12 +115,12 @@ Repository Link: [Ino Files](https://github.com/prakhar-29/Noir_Ino)
 
 ---
 
-## 🦾 Robotic Arm (URDF)  
-- Contains robotic arm description (URDF)  
+## 🦾 Robotic Arm (URDF + MoveIt)
 
-Repository Link: [Robotic Arm](https://github.com/prakhar-29/Robotic_arm_Noir) 
+* Contains the robotic arm description (URDF) and MoveIt configuration
+* Supports motion planning and execution using MoveIt
 
----
+Repository Link: [Robotic Arm](https://github.com/prakhar-29/Robotic_arm_Noir)
 
 ## 👥 Contributors  
 - [Jival Dhingra](https://github.com/jivalz)  
